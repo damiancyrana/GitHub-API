@@ -1,0 +1,22 @@
+import requests
+
+programming_language = input("Choose programming language to check the most popular projects on GitHub: ")
+
+url = f'https://api.github.com/search/repositories?q=language:{programming_language}&sort=stars'
+
+r = requests.get(url)
+print("Status Code", r.status_code)
+response_dict = r.json()
+
+print(f'Total number of "{programming_language}" repositories:', response_dict['total_count'])
+
+repository_dict = response_dict['items']
+print("Returned repository", len(repository_dict))
+
+for response_dict in repository_dict:
+    print('\n')
+    print("Name:", response_dict['name'])
+    print("Owner:", response_dict['owner']['login'])
+    print("Stars:", response_dict['stargazers_count'])
+    print("Repository address:", response_dict['html_url'])
+    print("Description:", response_dict['description'])

@@ -1,0 +1,11 @@
+# PyCharm #
+.idea/
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
