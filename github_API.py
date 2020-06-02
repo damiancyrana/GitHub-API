@@ -5,9 +5,13 @@ programming_language = input("Choose programming language to check the most popu
 url = f'https://api.github.com/search/repositories?q=language:{programming_language}&sort=stars'
 
 r = requests.get(url)
-print("Status Code", r.status_code)
-response_dict = r.json()
 
+if r.status_code == 200:
+    print("Successfully connection")
+else:
+    print("Connection error, enter programming language correctly !")
+
+response_dict = r.json()
 print(f'Total number of "{programming_language}" repositories:', response_dict['total_count'])
 
 repository_dict = response_dict['items']
