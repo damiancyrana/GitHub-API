@@ -18,7 +18,7 @@ programming_language = input("Choose programming language to check the most popu
 url = f'https://api.github.com/search/repositories?q=language:{programming_language}&sort=stars'
 ```
 
-Where **programming_language** it's for example: python, javascrip, java etc.
+Where **programming_language** it's for example: python, javascript, java etc.
 
 ## USAGE
 [![asciicast](https://asciinema.org/a/urh4xtvoEcoizrNj4WYMAZ0UP.svg)](https://asciinema.org/a/urh4xtvoEcoizrNj4WYMAZ0UP)
